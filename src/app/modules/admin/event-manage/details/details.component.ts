@@ -62,4 +62,21 @@ export class DetailsComponent {
       pdf.save('event-details.pdf');
     });
   }
+
+
+  showMoreImages = false;
+
+  get visibleImages() {
+    // Show first 4 images
+    return this.eventData?.images.slice(0, 4) || [];
+  }
+
+  get hiddenImages() {
+    // Show images beyond the first 4
+    return this.eventData?.images.slice(4) || [];
+  }
+
+  toggleMoreImages() {
+    this.showMoreImages = !this.showMoreImages;
+  }
 }

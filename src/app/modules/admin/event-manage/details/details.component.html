@@ -1,6 +1,6 @@
 <div class="container">
   <div class="event-card" *ngIf="eventData">
-    <div class="export-section"> <!-- Add this wrapper around the content you want to export -->
+    <div class="export-section">
       <div class="event-header-wrapper">
         <div class="event-header">
           <h2>{{ eventData.eventName }}</h2>
@@ -63,7 +63,7 @@
           <div class="detail-item">
             <span>Add Location</span>
             <p>{{ eventData.eventLocation }}</p>
-            <span class="icon">&#128269;</span> <!-- Example search icon using Unicode -->
+            <span class="icon">&#128269;</span>
           </div>
           <div class="detail-item">
             <span>PIN Level</span>
@@ -74,8 +74,14 @@
       <div class="photos-section">
         <h3>Photos</h3>
         <div class="photos">
-          <img src="{{ eventData.images }}" alt="Photo" />
+          <img *ngFor="let image of visibleImages" [src]="image" alt="Photo" />
         </div>
+        <div class="photos-hidden" [ngClass]="{ 'show': showMoreImages }">
+          <img *ngFor="let image of hiddenImages" [src]="image" alt="Photo" />
+        </div>
+        <button *ngIf="eventData.images.length > 4" class="more-button" (click)="toggleMoreImages()">
+          {{ showMoreImages ? 'Show Less' : 'Show More' }}
+        </button>
       </div>
     </div>
     <button class="export-btn" (click)="confirmExportPdf()">Export PDF</button>

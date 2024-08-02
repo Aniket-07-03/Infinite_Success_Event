@@ -1,112 +1,112 @@
-<div class="form-container" >
+<div class="form-container">
   <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-      <!-- Event Name and Description -->
-      <div class="form-section">
-          <div class="form-group">
-              <label for="eventName">Event Name</label>
-              <input formControlName="eventName" type="text" class="form-control" id="eventName" placeholder="Enter Name">
-              <div *ngIf="eventForm.get('eventName')?.invalid && eventForm.get('eventName')?.touched">
-                Event name is required.
-              </div>
-          </div>
-          <div class="form-group">
-              <label for="eventDescription">Event Description</label>
-              <textarea formControlName="eventDescription" class="form-control" id="eventDescription" rows="4" placeholder="Add Text Here..."></textarea>
-              <div *ngIf="eventForm.get('eventDescription')?.invalid && eventForm.get('eventDescription')?.touched">
-                Event description is required.
-              </div>
-            </div>
-      </div>
-
-      <!-- Date and Time Section -->
-      <div class="form-row">
-          <div class="form-group">
-              <label for="eventStartDate">Event Start Date</label>
-              <input formControlName="eventStartDate" type="date" class="form-control" id="eventStartDate">
-          </div>
-          <div class="form-group">
-              <label for="eventEndDate">Event End Date</label>
-              <input formControlName="eventEndDate" type="date" class="form-control" id="eventEndDate">
-          </div>
-      </div>
-      <div class="form-row">
-          <div class="form-group">
-              <label for="bookingStartDate">Booking Start Date</label>
-              <input formControlName="bookingStartDate" type="date" class="form-control" id="bookingStartDate">
-          </div>
-          <div class="form-group">
-              <label for="bookingEndDate">Booking End Date</label>
-              <input formControlName="bookingEndDate" type="date" class="form-control" id="bookingEndDate">
-          </div>
-      </div>
-      <div class="form-row">
-          <div class="form-group">
-              <label for="eventStartTime">Event Start Time</label>
-              <input formControlName="eventStartTime" type="time" class="form-control" id="eventStartTime">
-          </div>
-          <div class="form-group">
-              <label for="eventEndTime">Event End Time</label>
-              <input  formControlName="eventEndTime" type="time" class="form-control" id="eventEndTime">
-          </div>
-      </div>
-
-      <!-- Price and Capacity -->
-      <div class="form-row">
-          <div class="form-group">
-              <label for="price">Price</label>
-              <input formControlName="price" type="text" class="form-control" id="price" placeholder="Enter Price">
-              <div *ngIf="eventForm.get('price')?.invalid && eventForm.get('price')?.touched">
-                Price must be a non-negative number.
-              </div>
-          </div>
-          <div class="form-group">
-              <label for="capacity">Capacity</label>
-              <input formControlName="capacity" type="number" class="form-control" id="capacity" placeholder="EX. 1000">
-              <div *ngIf="eventForm.get('capacity')?.invalid && eventForm.get('capacity')?.touched">
-                Capacity must be at least 1.
-              </div>
-          </div>
-      </div>
-
-      <!-- Location and Files -->
-      <div class="form-row">
-          <div class="form-group">
-              <label for="location">Add Location</label>
-              <input formControlName="eventLocation" type="text" class="form-control" id="location" placeholder="Search Location">
-          </div>
-          <div class="form-group">
-              <label for="uploadFiles">Upload Files</label>
-              <input (change)="onFileChange($event)" multiple  type="file" class="form-control" id="uploadFiles">
-          </div>
-      </div>
-
-      <!-- Pin Level Dropdown -->
-      <div class="centered-group">
-        <div>
-          <label for="pinLevel">Pin Level:</label>
-          <div class="dropdown">
-            <button type="button" (click)="togglePinLevelDropdown()">Select Pin Levels</button>
-            <div *ngIf="showPinLevelDropdown" class="dropdown-content">
-              <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" /> Select all
-              <br />
-              <div *ngFor="let level of pinLevels">
-                <input type="checkbox" [value]="level" [checked]="eventForm.controls['pinLevel'].value.includes(level)" (change)="onPinLevelChange(level, $event)" /> {{ level }}
-              </div>
-            </div>
-          </div>
-          <div *ngIf="eventForm.get('pinLevel')?.value?.length">
-            <p>Selected Pin Levels:</p>
-            <ul>
-              <li *ngFor="let level of eventForm.get('pinLevel')?.value">{{ level }}</li>
-            </ul>
-          </div>
+    <!-- Event Name and Description -->
+    <div class="form-section">
+      <div class="form-group">
+        <label for="eventName">Event Name</label>
+        <input formControlName="eventName" type="text" class="form-control" id="eventName" placeholder="Enter Name">
+        <div *ngIf="eventForm.get('eventName')?.invalid && eventForm.get('eventName')?.touched">
+          Event name is required.
         </div>
       </div>
-
-      <!-- Buttons -->
-      <div class="btn-container">
-          <button type="button" class="btn btn-secondary">Cancel</button>
-          <button type="submit" class="btn btn-primary" [disabled]="eventForm.invalid">Create Event</button>
+      <div class="form-group">
+        <label for="eventDescription">Event Description</label>
+        <textarea formControlName="eventDescription" class="form-control" id="eventDescription" rows="4" placeholder="Add Text Here..."></textarea>
+        <div *ngIf="eventForm.get('eventDescription')?.invalid && eventForm.get('eventDescription')?.touched">
+          Event description is required.
+        </div>
       </div>
+    </div>
+
+    <!-- Date and Time Section -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="eventStartDate">Event Start Date</label>
+        <input formControlName="eventStartDate" type="date" class="form-control" id="eventStartDate">
+      </div>
+      <div class="form-group">
+        <label for="eventEndDate">Event End Date</label>
+        <input formControlName="eventEndDate" type="date" class="form-control" id="eventEndDate">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="bookingStartDate">Booking Start Date</label>
+        <input formControlName="bookingStartDate" type="date" class="form-control" id="bookingStartDate">
+      </div>
+      <div class="form-group">
+        <label for="bookingEndDate">Booking End Date</label>
+        <input formControlName="bookingEndDate" type="date" class="form-control" id="bookingEndDate">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="eventStartTime">Event Start Time</label>
+        <input formControlName="eventStartTime" type="time" class="form-control" id="eventStartTime">
+      </div>
+      <div class="form-group">
+        <label for="eventEndTime">Event End Time</label>
+        <input formControlName="eventEndTime" type="time" class="form-control" id="eventEndTime">
+      </div>
+    </div>
+
+    <!-- Price and Capacity -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input formControlName="price" type="text" class="form-control" id="price" placeholder="Enter Price">
+        <div *ngIf="eventForm.get('price')?.invalid && eventForm.get('price')?.touched">
+          Price must be a non-negative number.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="capacity">Capacity</label>
+        <input formControlName="capacity" type="number" class="form-control" id="capacity" placeholder="EX. 1000">
+        <div *ngIf="eventForm.get('capacity')?.invalid && eventForm.get('capacity')?.touched">
+          Capacity must be at least 1.
+        </div>
+      </div>
+    </div>
+
+    <!-- Location and Files -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="location">Add Location</label>
+        <input formControlName="eventLocation" type="text" class="form-control" id="location" placeholder="Search Location">
+      </div>
+      <div class="form-group">
+        <label for="uploadFiles">Upload Files</label>
+        <input (change)="onFileChange($event)" multiple type="file" class="form-control" id="uploadFiles">
+      </div>
+    </div>
+
+    <!-- Pin Level Dropdown -->
+    <div class="centered-group">
+      <div>
+        <label for="pinLevel">Pin Level:</label>
+        <div class="dropdown">
+          <button type="button" (click)="togglePinLevelDropdown()">Select Pin Levels</button>
+          <div *ngIf="showPinLevelDropdown" class="dropdown-content">
+            <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" /> Select all
+            <br />
+            <div *ngFor="let level of pinLevels">
+              <input type="checkbox" [value]="level" [checked]="eventForm.controls['pinLevel'].value.includes(level)" (change)="onPinLevelChange(level, $event)" /> {{ level }}
+            </div>
+          </div>
+        </div>
+        <div *ngIf="eventForm.get('pinLevel')?.value?.length">
+          <p>Selected Pin Levels:</p>
+          <ul>
+            <li *ngFor="let level of eventForm.get('pinLevel')?.value">{{ level }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-container">
+      <button type="button" class="btn btn-secondary">Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="eventForm.invalid">Create Event</button>
+    </div>
   </form>
 </div>

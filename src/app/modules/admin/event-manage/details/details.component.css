@@ -106,15 +106,41 @@ body {
 
 .photos {
   display: flex;
-  justify-content: center;
+  overflow-x: auto;
   gap: 10px;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
 .photos img {
-  max-width: 100%;
+  max-width: 150px; /* Adjust size as needed */
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.more-button {
+  background-color: #7036d5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.more-button:hover {
+  background-color: #5728a5;
+}
+
+.photos-hidden {
+  display: none;
+}
+
+.photos-hidden.show {
+  display: flex;
 }
 
 .export-btn {
