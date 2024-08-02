@@ -40,6 +40,7 @@ import { NotificationComponent } from './modules/admin/profile/notification/noti
 import { ProfileUpdateComponent } from './modules/admin/profile/profile-update/profile-update.component';
 import { SettingComponent } from './modules/admin/profile/setting/setting.component';
 import { FullPageComponent } from './modules/admin/profile/full-page/full-page.component';
+import { SwitchAccountComponent } from './modules/admin/profile/switch-account/switch-account.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { FullPageComponent } from './modules/admin/profile/full-page/full-page.c
     NotificationComponent,
     ProfileUpdateComponent,
     SettingComponent,
-    FullPageComponent
+    FullPageComponent,
+    SwitchAccountComponent
   ],
   imports: [
     BrowserModule,
