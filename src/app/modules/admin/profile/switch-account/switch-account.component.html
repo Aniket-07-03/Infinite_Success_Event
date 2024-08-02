@@ -8,12 +8,12 @@
       <ul>
         <li> <a routerLink="/dashboard"> <i class="fa fa-house"></i>&nbsp;&nbsp;
             Dashboard</a></li>
-        <li ><a><i class="fa fa-calendar-days"></i>&nbsp;&nbsp; Event Management</a></li>
+        <li class="active"><a><i class="fa fa-calendar-days"></i>&nbsp;&nbsp; Event Management</a></li>
         <li><a><i class="fa fa-user"></i>&nbsp;&nbsp; User Management</a></li>
 
-        <li ><a> <i class="fa fa-plus">&nbsp;&nbsp;</i>Add Admin</a></li>
+        <li><a> <i class="fa fa-plus">&nbsp;&nbsp;</i>Add Admin</a></li>
         <li><a> <i class="fa fa-repeat"></i> &nbsp;&nbsp; Switch Account</a></li>
-        <li class="active"><a> <i class="fa fa-gear"></i>&nbsp;&nbsp; Settings</a></li>
+        <li><a> <i class="fa fa-gear"></i>&nbsp;&nbsp; Settings</a></li>
         <li><a><i class="fa fa-arrow-right-from-bracket"></i>&nbsp;&nbsp; Log out</a></li>
       </ul>
     </nav>
@@ -43,32 +43,41 @@
 
     <div class="content">
       <h2 class="event-title" style="color: #4D22AE; font-weight: 400; font-size: 40px;">Event Details</h2>
-      
-      
-      <div class="menu-container">
-        <ul class="menu-list">
-          <li class="menu-item active">
-            <span class="icon">👤</span>
-            <span class="title" style="color:white;">Account</span>
-            <span class="arrow">›</span>
-          </li>
-          <li class="menu-item">
-            <span class="icon">🔒</span>
-            <span class="title">Privacy</span>
-            <span class="arrow">›</span>
-          </li>
-          <li class="menu-item">
-            <span class="icon">💬</span>
-            <span class="title">Help Center</span>
-            <span class="arrow">›</span>
-          </li>
-          <li class="menu-item">
-            <span class="icon">ℹ️</span>
-            <span class="title">About Us</span>
-            <span class="arrow">›</span>
-          </li>
-        </ul>
+      <div class="account-selection-container">
+        <div class="account-item" *ngFor="let account of accounts">
+          <div class="radio-button">
+            <input
+              type="radio"
+              name="accountType"
+              [value]="account.type"
+              [(ngModel)]="selectedAccount"
+              (change)="onAccountChange(account)"
+            />
+          </div>
+          <div class="account-info">
+            <span>{{ account.name }}</span>
+          </div>
+          <div class="action-button">
+            <button
+              [class.active]="account.isActive"
+              (click)="toggleLogin(account)"
+            >
+              {{ account.isActive ? 'Logout' : 'Login' }}
+            </button>
+          </div>
+          <div class="status-indicator">
+            <span
+              class="status-dot"
+              [ngClass]="{ active: account.isActive, inactive: !account.isActive }"
+            ></span>
+            <span class="status-text">
+              {{ account.isActive ? 'Active' : 'Unactive' }}
+            </span>
+          </div>
+        </div>
       </div>
+      
+      
       
       
     </div>

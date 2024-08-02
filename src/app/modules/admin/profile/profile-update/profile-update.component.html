@@ -1,1 +1,47 @@
-<p>profile-update works!</p>
+<div class="profile-update-container">
+  <div class="profile-photo">
+    <img
+      *ngIf="profileImage"
+      [src]="profileImage"
+      alt="Profile Photo"
+      class="profile-image"
+    />
+    <label class="edit-icon" for="fileInput">
+      <input
+        type="file"
+        id="fileInput"
+        (change)="onFileSelected($event)"
+        hidden
+      />
+      <i class="edit-icon fas fa-pencil-alt"></i>
+    </label>
+  </div>
+  <p class="add-profile-photo">Add Profile Photo</p>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="username"
+        placeholder="Enter Full Name"
+      />
+      <input
+        type="text"
+        formControlName="adminId"
+        placeholder="Enter Admin ID"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Enter Email ID"
+      />
+      <input
+        type="text"
+        formControlName="phoneNumber"
+        placeholder="Enter Phone Number"
+      />
+    </div>
+    <button type="submit" class="save-button">Save Updates</button>
+  </form>
+</div>
