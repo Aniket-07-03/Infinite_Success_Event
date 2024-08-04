@@ -2,17 +2,31 @@
   <!-- Left Sidebar -->
   <aside class="sidebar">
     <div class="logo">
-      <img src="./logo.svg" alt="Logo">
+      <img src="./logo.svg" alt="Logo" />
     </div>
     <nav class="menu">
       <ul>
-        <li class="active"><a href="#dashboard"><i class="fa fa-house"></i>&nbsp;&nbsp; Dashboard</a></li>
-        <li><a href="#event-management"><i class="fa fa-calendar-days"></i>&nbsp;&nbsp; Event Management</a></li>
-        <li><a href="#user-management"><i class="fa fa-user"></i>&nbsp;&nbsp; User Management</a></li>
-        <li><a href="#add-admin"><i class="fa fa-plus"></i>&nbsp;&nbsp; Add Admin</a></li>
-        <li><a href="#switch-account"><i class="fa fa-repeat"></i>&nbsp;&nbsp; Switch Account</a></li>
-        <li><a href="#settings"><i class="fa fa-gear"></i>&nbsp;&nbsp; Settings</a></li>
-        <li><a href="#logout"><i class="fa fa-arrow-right-from-bracket"></i>&nbsp;&nbsp; Log out</a></li>
+        <li class="active">
+          <a><i class="fa fa-house"></i>&nbsp;&nbsp; Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/user_manage"><i class="fa fa-calendar-days"></i>&nbsp;&nbsp; Event Management</a>
+        </li>
+        <li>
+          <a><i class="fa fa-user"></i>&nbsp;&nbsp; User Management</a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i>&nbsp;&nbsp; Add Admin</a>
+        </li>
+        <li>
+          <a href="#switch-account"><i class="fa fa-repeat"></i>&nbsp;&nbsp; Switch Account</a>
+        </li>
+        <li>
+          <a href="#settings"><i class="fa fa-gear"></i>&nbsp;&nbsp; Settings</a>
+        </li>
+        <li>
+          <a href="#logout"><i class="fa fa-arrow-right-from-bracket"></i>&nbsp;&nbsp; Log out</a>
+        </li>
       </ul>
     </nav>
     <app-calendar></app-calendar>
@@ -20,35 +34,6 @@
 
   <!-- Main Content Area -->
   <main class="main-content">
-    <!-- <header class="header">
-      <div class=" name" style="flex: 1;text-align: right;">
-        <h2 style="  margin: 0;
-        font-size: 20px;
-        white-space: nowrap;
-        color: #333;" >Good Morning, Vijay
-
-        </h2>
-        <p style="font-size: 12px; color: #888; margin: 0;">Have a nice day!</p>
-
-      </div>
-      <div class="search">
-        <i class="fa fa-magnifying-glass search-icon"></i>
-        <input type="text" placeholder="Search">
-      </div>
-
-      <div class="icons">
-        <button style="border: none; background: none;">
-          <img src="./Messages.png" alt="Messages" class="icon-image" />
-        </button>
-        <button style="border: none; background: none;">
-          <img src="./Notifications.png" alt="Notifications" class="icon-image" />
-        </button>
-        <div class="user">
-          <img src="./user.png" alt="User">
-        </div>
-      </div>
-    </header> -->
-
     <header class="header">
       <div class="name">
         <h2 class="greeting">Good Morning, Vijay</h2>
@@ -56,7 +41,7 @@
       </div>
       <div class="search-bar">
         <i class="fa fa-search search-icon"></i>
-        <input type="text" placeholder="Search">
+        <input type="text" placeholder="Search" />
       </div>
       <div class="header-right">
         <button class="icon-button">
@@ -66,44 +51,19 @@
           <img src="./Notifications.png" alt="Notifications" class="icon-image" />
         </button>
         <div class="user-profile">
-          <img src="./user.png" alt="User">
+          <img src="./user.png" alt="User" />
         </div>
       </div>
     </header>
 
     <div class="content">
-      <!-- Event Details and Weekly Status Wrapper -->
       <div class="content-wrapper">
-        <!-- Event Details -->
-        <!-- <div class="event-details">
-          <div class="event-info">
-            <h2>My Team Mega Workshop</h2>
-            <p><i class="fa fa-map-marker"></i> Chennai Trade Centre</p>
-            <p><i class="fa fa-calendar"></i> 2nd March 2023</p>
-            <p><i class="fa fa-clock"></i> 10:00 AM - 12:00 PM</p>
-          </div>
-          <div class="ticket-info">
-            <div class="tickets-sold">
-              <h3>2041</h3>
-              <p>Tickets sold till date</p>
-            </div>
-            <div class="tickets-left">
-              <h3>1011</h3>
-              <p>Tickets are left</p>
-            </div>
-          </div>
-        </div> -->
         <div class="container1">
           <p style="color: white; font-size: 20px;">Upcoming Event Details</p>
-
           <div class="event-details1">
-
-
             <div class="event-title1">
               My Team <p style="margin-left: 20px;">Mega Workshop</p>
             </div>
-
-
             <div class="event-info1">
               <div class="ticket-count1">2041</div>
               <div class="ticket-description1">Tickets sold till date</div>
@@ -127,42 +87,42 @@
         <div class="weekly-status">
           <div class="grid-container">
             <div class="card1">
-                <div class="icon1">
-                    <img src="./ticket.svg" alt="Icon">
-                </div>
-                <div class="content1">
-                    <h1>702</h1>
-                    <p>Tickets are sold in this week</p>
-                </div>
+              <div class="icon1">
+                <img src="./ticket.svg" alt="Icon" />
+              </div>
+              <div class="content1">
+                <h1>702</h1>
+                <p>Tickets are sold in this week</p>
+              </div>
             </div>
             <div class="card1">
-                <div class="icon1">
-                    <img src="./revenue.svg" alt="Icon">
-                </div>
-                <div class="content1">
-                    <h1>25,200</h1>
-                    <p>Revenue genrated in this week</p>
-                </div>
+              <div class="icon1">
+                <img src="./revenue.svg" alt="Icon" />
+              </div>
+              <div class="content1">
+                <h1>25,200</h1>
+                <p>Revenue generated in this week</p>
+              </div>
             </div>
             <div class="card1">
-                <div class="icon1">
-                    <img src="./ticket.svg" alt="Icon">
-                </div>
-                <div class="content1">
-                    <h1>10</h1>
-                    <p>Events are scheduled in this week </p>
-                </div>
+              <div class="icon1">
+                <img src="./ticket.svg" alt="Icon" />
+              </div>
+              <div class="content1">
+                <h1>10</h1>
+                <p>Events are scheduled in this week</p>
+              </div>
             </div>
             <div class="card1">
-                <div class="icon1">
-                    <img src="./ticket.svg" alt="Icon">
-                </div>
-                <div class="content1">
-                    <h1>224</h1>
-                    <p>Users Registered in this week</p>
-                </div>
+              <div class="icon1">
+                <img src="./ticket.svg" alt="Icon" />
+              </div>
+              <div class="content1">
+                <h1>224</h1>
+                <p>Users Registered in this week</p>
+              </div>
             </div>
-        </div>
+          </div>
         </div>
       </div>
     </div>
@@ -172,63 +132,20 @@
   <aside class="right-sidebar">
     <div class="recent-updates">
       <h4>Recent Event Updates</h4>
-      <div class="update-item">
+      <div class="update-item" *ngFor="let event of eventData">
         <div class="update-details">
-          <p class="update-title">Max Meet-up</p>
-          <p><i class="fa fa-calendar"></i> 2nd March 2023</p>
-          <p><i class="fa fa-clock"></i> 10:00 AM</p>
+          <p class="update-title"> {{event.eventName}} </p>
+
+      <p><i class="fa fa-calendar"></i> {{ formatEventDate(event.eventStartDate) }}</p>
+          <p><i class="fa fa-clock"></i> {{event.eventStartTime}} </p>
         </div>
-        <span class="price">500 Rs.</span>
+        <span class="price">{{event.price}} Rs.</span>
       </div>
-      <!-- Repeat for other updates -->
-      <div class="update-item">
-        <div class="update-details">
-          <p class="update-title">Max Meet-up</p>
-          <p><i class="fa fa-calendar"></i> 2nd March 2023</p>
-          <p><i class="fa fa-clock"></i> 10:00 AM</p>
-        </div>
-        <span class="price">500 Rs.</span>
-      </div>
-      <div class="update-item">
-        <div class="update-details">
-          <p class="update-title">Max Meet-up</p>
-          <p><i class="fa fa-calendar"></i> 2nd March 2023</p>
-          <p><i class="fa fa-clock"></i> 10:00 AM</p>
-        </div>
-        <span class="price">500 Rs.</span>
-      </div>
-      <div class="update-item">
-        <div class="update-details">
-          <p class="update-title">Max Meet-up</p>
-          <p><i class="fa fa-calendar"></i> 2nd March 2023</p>
-          <p><i class="fa fa-clock"></i> 10:00 AM</p>
-        </div>
-        <span class="price">500 Rs.</span>
-      </div>
-      <div class="update-item">
-        <div class="update-details">
-          <p class="update-title">Max Meet-up</p>
-          <p><i class="fa fa-calendar"></i> 2nd March 2023</p>
-          <p><i class="fa fa-clock"></i> 10:00 AM</p>
-        </div>
-        <span class="price">500 Rs.</span>
-      </div>
-      <div class="update-item">
-        <div class="update-details">
-          <p class="update-title">Max Meet-up</p>
-          <p><i class="fa fa-calendar"></i> 2nd March 2023</p>
-          <p><i class="fa fa-clock"></i> 10:00 AM</p>
-        </div>
-        <span class="price">500 Rs.</span>
-      </div>
-      <div class="update-item">
-        <div class="update-details">
-          <p class="update-title">Max Meet-up</p>
-          <p><i class="fa fa-calendar"></i> 2nd March 2023</p>
-          <p><i class="fa fa-clock"></i> 10:00 AM</p>
-        </div>
-        <span class="price">500 Rs.</span>
-      </div>
+
+
+
+
+
     </div>
   </aside>
 </div>

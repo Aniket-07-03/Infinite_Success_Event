@@ -41,4 +41,25 @@ export class UserManageComponent {
     this.router.navigate(['/event', id]);
 
   }
+
+
+  isModalOpen = false;
+
+  // Sample user data
+  users = [
+    { id: '#2001', name: 'A.Jadhav', location: 'Chennai', pinLevel: 'Manager' },
+    { id: '#2002', name: 'A.Jadhav', location: 'Chennai', pinLevel: 'Manager' },
+    { id: '#2003', name: 'A.Jadhav', location: 'Chennai', pinLevel: 'Manager' },
+    { id: '#2004', name: 'A.Jadhav', location: 'Chennai', pinLevel: 'Manager' },
+    { id: '#2005', name: 'A.Jadhav', location: 'Chennai', pinLevel: 'Manager' },
+    // Add more users as needed
+  ];
+
+  openModal(): void {
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+  }
 }

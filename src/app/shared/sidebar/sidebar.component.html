@@ -1,88 +1,45 @@
-<div class="container">
-  <header>
-      <h1>Event Details</h1>
-  </header>
-  <div class="event-card">
-      <div class="event-header-wrapper">
-          <div class="event-header">
-              <h2>My Team Mega Works</h2>
-              <p class="event-location">
-                  <span>📍</span> Chennai Trade Centre
-              </p>
-              <p class="event-date-time">
-                  <span>📅</span> 2<sup>nd</sup> March 2023
-                  <br>
-                  <span>⏰</span> 10:00 AM - 12:00 PM
-              </p>
+<div class="events-section">
+  <!-- Upcoming Events Section -->
+  <section class="events-category">
+    <div class="section-header">
+      <h2>Upcoming Events</h2>
+      <a href="#" class="view-all">View All</a>
+    </div>
+    <div class="event-cards">
+      <article class="event-card highlighted" *ngFor="let event of upcomingEvents">
+        <img [src]="event.image" alt="Event Image" class="event-image" />
+        <div class="event-details">
+          <h3>{{ event.title }}</h3>
+          <p class="event-date">{{ event.date }}</p>
+          <p class="event-description">{{ event.description }}</p>
+          <div class="event-footer">
+            <span class="price">{{ event.price }}</span>
+            <button class="book-button">Book a ticket</button>
           </div>
-      </div>
-      <div class="event-description">
-          <h3>Event Description</h3>
-          <p>
-              Lorem ipsum dolor sit amet consectetur. Commodo vulputate malesuada malesuada purus diam massa molestie. Viverra accumsan rhoncus auctor neque fusce a fringilla vitae. Blandit in vulputate placerat eget et vulputate nulla consequat. Est diam hac mauris cursus volutpat aliquet purus arcu. Curabitur vestibulum eu congue mauris. Posuere sem ipsum quam nulla. Lorem magna eu enim pellentesque rhoncus dui augue. Integer viverra blandit purus. Quam nisl dignissim gravida.
-          </p>
-      </div>
-      <div class="event-details">
-          <div class="details-row">
-              <div class="detail-item">
-                  <span>Event Start Date</span>
-                  <p>10-03-2023</p>
-              </div>
-              <div class="detail-item">
-                  <span>Event End Date</span>
-                  <p>10-03-2023</p>
-              </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Recommended Events Section -->
+  <section class="events-category">
+    <div class="section-header">
+      <h2>Recommended</h2>
+      <a href="#" class="view-all">View All</a>
+    </div>
+    <div class="event-cards">
+      <article class="event-card" *ngFor="let event of recommendedEvents">
+        <img [src]="event.image" alt="Event Image" class="event-image" />
+        <div class="event-details">
+          <h3>{{ event.title }}</h3>
+          <p class="event-date">{{ event.date }}</p>
+          <p class="event-description">{{ event.description }}</p>
+          <div class="event-footer">
+            <span class="price">{{ event.price }}</span>
+            <button class="book-button">Book a ticket</button>
           </div>
-          <div class="details-row">
-              <div class="detail-item">
-                  <span>Booking Start Date</span>
-                  <p>5-03-2023</p>
-              </div>
-              <div class="detail-item">
-                  <span>Booking End Date</span>
-                  <p>8-03-2023</p>
-              </div>
-          </div>
-          <div class="details-row">
-              <div class="detail-item">
-                  <span>Event Start Time</span>
-                  <p>10:00 AM</p>
-              </div>
-              <div class="detail-item">
-                  <span>Event End Time</span>
-                  <p>12:00 PM</p>
-              </div>
-          </div>
-          <div class="details-row">
-              <div class="detail-item">
-                  <span>Price</span>
-                  <p>700/-</p>
-              </div>
-              <div class="detail-item">
-                  <span>Capacity</span>
-                  <p>2000</p>
-              </div>
-          </div>
-          <div class="details-row">
-              <div class="detail-item">
-                  <span>Add Location</span>
-                  <p>Chennai</p>
-              </div>
-              <div class="detail-item">
-                  <span>PIN Level</span>
-                  <p>Manager Level & HR</p>
-              </div>
-          </div>
-      </div>
-      <div class="photos-section">
-          <h3>Photos</h3>
-          <div class="photos">
-              <img src="img.svg" alt="Photo 1">
-              <img src="img.svg" alt="Photo 2">
-              <img src="img.svg" alt="Photo 3">
-              <img src="img.svg" alt="Photo 4">
-          </div>
-          <button class="export-btn">Export PDF</button>
-      </div>
-  </div>
+        </div>
+      </article>
+    </div>
+  </section>
 </div>

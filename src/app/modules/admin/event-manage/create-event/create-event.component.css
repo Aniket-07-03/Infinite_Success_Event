@@ -90,10 +90,10 @@ body, html {
   background-color: #f9f9fc;
 }
 .header {
-  width: 78%;
+  width: 80%;
   position: fixed;
   top: 10px;
-  left: 280px; /* Adjust this according to your sidebar width */
+  left: 330px; /* Adjust this according to your sidebar width */
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -153,6 +153,7 @@ body, html {
 .content {
   margin-top: 50px; /* Space for fixed header */
   padding: 20px;
+  margin-left: 50px;
   /* overflow: hidden; */
 }
 
