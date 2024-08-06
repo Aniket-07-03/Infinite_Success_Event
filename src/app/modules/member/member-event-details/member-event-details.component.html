@@ -1,0 +1,79 @@
+<div class="container">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="./logo.svg" alt="">
+    </div>
+    <nav class="menu">
+      <ul>
+        <li> <a routerLink="/dashboard"> <i class="fa fa-house"></i>&nbsp;&nbsp;
+            Dashboard</a></li>
+        <li class="active"><a><i class="fa fa-calendar-days"></i>&nbsp;&nbsp; Event Management</a></li>
+        <li><a><i class="fa fa-user"></i>&nbsp;&nbsp; User Management</a></li>
+
+        <li><a> <i class="fa fa-plus">&nbsp;&nbsp;</i>Add Admin</a></li>
+        <li><a> <i class="fa fa-repeat"></i> &nbsp;&nbsp; Switch Account</a></li>
+        <li><a> <i class="fa fa-gear"></i>&nbsp;&nbsp; Settings</a></li>
+        <li><a><i class="fa fa-arrow-right-from-bracket"></i>&nbsp;&nbsp; Log out</a></li>
+      </ul>
+    </nav>
+<app-calendar></app-calendar>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <div class="search">
+        <i class="fa fa-magnifying-glass search-icon"></i>
+        <input type="text" placeholder="Search">
+      </div>
+
+      <div class="icons">
+        <button style="border: none; background: none;">
+          <img src="./Messages.png" alt="Messages" class="icon-image" />
+        </button>
+        <button style="border: none; background: none;">
+          <img src="./Notifications.png" alt="Notifications" class="icon-image" />
+        </button>
+        <div class="user">
+          <img src="./user.png" alt="User">
+        </div>
+      </div>
+    </header>
+
+
+    <div class="content">
+      <h2 class="event-title" style="color: #4D22AE; font-weight: 400; font-size: 40px;">Event Details</h2>
+      <div class="container1">
+        <div class="event-card">
+            <div class="position-relative">
+                <img src="https://cdn-gfmpn.nitrocdn.com/abNxfFokLJpCUCJuKcOdzZamuyKtSvkP/assets/images/source/rev-60b2a26/www.oneplanevents.com/wp-content/uploads/elementor/thumbs/Screenshot-2023-07-25-at-14.13.30-q9xo29f2ds5pjhcg0xr1gmjbpdm2pv4ex0mdj1cjxs.png" alt="Event Image" class="event-image">
+                <!-- <div class="icon-buttons">
+                    <div class="icon-button">🔗</div>
+                    <div class="icon-button">❤️</div>
+                </div> -->
+            </div>
+            <div class="event-content">
+                <div class="event-buttons">
+                    <div class="event-price">1000Rs.</div>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+                <div class="event-title">Day in the sun!</div>
+                <div class="event-subtitle">We are strong, Because the journey demands it!</div>
+                <div class="event-description">
+                    Lorem ipsum dolor sit amet consectetur. In urna vitae diam ut ac. Ac augue nisi mi mollis amet faucibus volutpat urna. Locus neque et enim nunc faucibus urna justo nunc blandit. Ut at purus leo vitae orci. Integer a vitae et faucibus mi egestas eu. Et tellus hac convallis ridiculus aliquet urna.
+                </div>
+                <div class="event-details">
+                    <div class="event-detail"><strong>Qualification level:</strong><br> Open to all Senior consultants</div>
+                    <div class="event-detail"><strong>Location:</strong><br> Andheri, Mumbai, Maharashtra</div>
+                    <div class="event-detail"><strong>Date and Time:</strong><br> Sunday, 9 March 2022 - 10:00 am</div>
+                    <div class="event-detail"><strong>Seats Left:</strong><br> 55 Seats are left</div>
+                </div>
+                <div class="event-map">
+                    <button class="event-map-button">📍 Open in Google Maps</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+  </main>
+</div>

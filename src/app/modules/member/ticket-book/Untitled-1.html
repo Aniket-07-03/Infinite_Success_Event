@@ -1,0 +1,65 @@
+<div class="event-dashboard">
+  <!-- Left Panel -->
+  <div class="left-panel">
+    <!-- Upcoming Event Details -->
+    <div class="event-details">
+      <div class="event-image" style="background-image: url('path/to/your/event-image.jpg');">
+        <div class="event-info">
+          <h2>Upcoming Event Details</h2>
+          <h1>My Team Mega Workshop</h1>
+          <div class="event-meta">
+            <p><i class="fas fa-map-marker-alt"></i> Chennai Trade Centre</p>
+            <p><i class="fas fa-calendar-alt"></i> 2<sup>nd</sup> March 2023</p>
+            <p><i class="fas fa-clock"></i> 10:00 AM – 12:00 PM</p>
+          </div>
+          <button class="button primary">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weekly Basis Status -->
+    <div class="event-status">
+      <h3>Weekly Basis Status</h3>
+      <div class="status-card">
+        <div class="status-number">5</div>
+        <div class="status-text">Events are attended in this week</div>
+        <i class="fas fa-calendar-check"></i>
+      </div>
+      <div class="status-card">
+        <div class="status-number">4</div>
+        <div class="status-text">Events are scheduled in this week</div>
+        <i class="fas fa-calendar"></i>
+      </div>
+    </div>
+
+    <!-- Recommended Events -->
+    <div class="recommended-events">
+      <h3>Recommended <a href="#" class="view-all">view all</a></h3>
+      <div class="event-recommendation">
+        <img src="path/to/holi-image.jpg" alt="Holi Event" class="event-thumbnail" />
+        <div class="event-info">
+          <h4>Holi Event</h4>
+          <p>This Holi makes it special with us!</p>
+          <div class="event-meta">
+            <p><i class="fas fa-map-marker-alt"></i> Chennai Trade Centre</p>
+            <p><i class="fas fa-calendar-alt"></i> 2<sup>nd</sup> March 2023</p>
+          </div>
+          <button class="button primary">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="right-panel">
+    <h3>Recent Event Updates</h3>
+    <div class="event-update" *ngFor="let event of events">
+      <div class="event-title">{{ event.title }}</div>
+      <div class="event-details-small">
+        <p><i class="fas fa-map-marker-alt"></i> {{ event.location }}</p>
+        <p><i class="fas fa-calendar-alt"></i> {{ event.date }}</p>
+        <p><i class="fas fa-clock"></i> {{ event.time }}</p>
+      </div>
+      <button class="button secondary">View Details</button>
+    </div>
+  </div>

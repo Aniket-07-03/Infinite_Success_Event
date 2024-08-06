@@ -19,4 +19,6 @@ export class RegisterService {
   loginUser(user:any):Observable<any>{
     return this.http.get(this.apiUrl,user)
   }
+
+ 
 }

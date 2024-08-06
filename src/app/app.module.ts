@@ -23,6 +23,16 @@ import { EventDetailsComponent } from './modules/admin/event-manage/event-detail
 import { DetailsComponent } from './modules/admin/event-manage/details/details.component';
 import { CreateEventComponent } from './modules/admin/event-manage/create-event/create-event.component';
 import { CreateEventFormComponent } from './modules/admin/event-manage/create-event-form/create-event-form.component';
+import { MemberRegisterComponent } from './modules/member/auth/member-register/member-register.component';
+import { MemberLoginComponent } from './modules/member/auth/member-login/member-login.component';
+import { MemberDashboardComponent } from './modules/member/member-dashboard/member-dashboard.component';
+import { DashDetailComponent } from './modules/member/member-dashboard/dash-detail/dash-detail.component';
+import { MemberEventListComponent } from './modules/member/member-event-list/member-event-list.component';
+import { EventSidebarComponent } from './modules/member/member-event-list/event-sidebar/event-sidebar.component';
+import { MemberEventDetailsComponent } from './modules/member/member-event-details/member-event-details.component';
+import { TicketBookComponent } from './modules/member/ticket-book/ticket-book.component';
+import { PreviewTicketComponent } from './modules/member/ticket-book/preview-ticket/preview-ticket.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +52,17 @@ import { CreateEventFormComponent } from './modules/admin/event-manage/create-ev
     EventDetailsComponent,
     DetailsComponent,
     CreateEventComponent,
-    CreateEventFormComponent
+    CreateEventFormComponent,
+    MemberRegisterComponent,
+    MemberLoginComponent,
+    MemberDashboardComponent,
+    DashDetailComponent,
+    MemberEventListComponent,
+    EventSidebarComponent,
+    MemberEventDetailsComponent,
+    TicketBookComponent,
+    PreviewTicketComponent,
+
   ],
   imports: [
     BrowserModule,

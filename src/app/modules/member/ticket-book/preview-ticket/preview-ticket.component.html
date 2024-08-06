@@ -1,0 +1,132 @@
+<div class="container">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="./logo.svg" alt="">
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a routerLink="/dashboard"> <i class="fa fa-house"></i>&nbsp;&nbsp; Dashboard</a></li>
+        <li class="active"><a><i class="fa fa-calendar-days"></i>&nbsp;&nbsp; Event Management</a></li>
+        <li><a><i class="fa fa-user"></i>&nbsp;&nbsp; User Management</a></li>
+        <li><a> <i class="fa fa-plus">&nbsp;&nbsp;</i>Add Admin</a></li>
+        <li><a> <i class="fa fa-repeat"></i> &nbsp;&nbsp; Switch Account</a></li>
+        <li><a> <i class="fa fa-gear"></i>&nbsp;&nbsp; Settings</a></li>
+        <li><a><i class="fa fa-arrow-right-from-bracket"></i>&nbsp;&nbsp; Log out</a></li>
+      </ul>
+    </nav>
+    <app-calendar></app-calendar>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <div class="search">
+        <i class="fa fa-magnifying-glass search-icon"></i>
+        <input type="text" placeholder="Search">
+      </div>
+
+      <div class="icons">
+        <button style="border: none; background: none;">
+          <img src="./Messages.png" alt="Messages" class="icon-image" />
+        </button>
+        <button style="border: none; background: none;">
+          <img src="./Notifications.png" alt="Notifications" class="icon-image" />
+        </button>
+        <div class="user">
+          <img src="./user.png" alt="User">
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="container1">
+        <div class="left-panel">
+          <h1>Day in the sun!</h1>
+          <p>We are strong, Because the journey demands it!</p>
+          <div class="event-info">
+            <p>📍 Chennai Trade Centre</p>
+            <p>🗓️ 2<sup>nd</sup> March 2023</p>
+            <p>⏰ 10:00 AM - 12:00 PM</p>
+          </div>
+        </div>
+        <div class="right-panel">
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="userName">User Name*</label>
+              <input type="text" id="userName" formControlName="userName" placeholder="Ashish"
+                [attr.readonly]="showPreview ? true : null">
+              <div *ngIf="registrationForm.get('userName')?.touched && registrationForm.get('userName')?.invalid" class="error">
+                User Name is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name*</label>
+              <input type="text" id="lastName" formControlName="lastName" placeholder="Patil"
+                [attr.readonly]="showPreview ? true : null">
+              <div *ngIf="registrationForm.get('lastName')?.touched && registrationForm.get('lastName')?.invalid" class="error">
+                Last Name is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="address">Address*</label>
+              <input type="text" id="address" formControlName="address" placeholder="Thane, Maharashtra"
+                [attr.readonly]="showPreview ? true : null">
+              <div *ngIf="registrationForm.get('address')?.touched && registrationForm.get('address')?.invalid" class="error">
+                Address is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number*</label>
+              <input type="text" id="phone" formControlName="phone" placeholder="+91 9999222339"
+                [attr.readonly]="showPreview ? true : null">
+              <div *ngIf="registrationForm.get('phone')?.touched && registrationForm.get('phone')?.invalid" class="error">
+                Phone Number is required and should match +91 format.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email ID*</label>
+              <input type="email" id="email" formControlName="email" placeholder="typeyourmailid@gmail.com"
+                [attr.readonly]="showPreview ? true : null">
+              <div *ngIf="registrationForm.get('email')?.touched && registrationForm.get('email')?.invalid" class="error">
+                Valid Email ID is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="ticketType">Ticket Type</label>
+              <select id="ticketType" formControlName="ticketType" [attr.disabled]="showPreview ? true : null">
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="spouseName">Spouse Name</label>
+              <input type="text" id="spouseName" formControlName="spouseName" placeholder="Abcdefg"
+                [attr.readonly]="showPreview ? true : null">
+              <div *ngIf="registrationForm.get('spouseName')?.touched && registrationForm.get('spouseName')?.invalid" class="error">
+                Spouse Name is required when ticket type is Double.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="spouseMeal">Spouse Meal</label>
+              <select id="spouseMeal" formControlName="spouseMeal" [attr.disabled]="showPreview ? true : null">
+                <option value="veg">Veg</option>
+                <option value="non-veg">Non-Veg</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="userMeal">User Meal</label>
+              <select id="userMeal" formControlName="userMeal" [attr.disabled]="showPreview ? true : null">
+                <option value="veg">Veg</option>
+                <option value="non-veg">Non-Veg</option>
+              </select>
+            </div>
+            <div class="button-group">
+              <button type="button" class="preview-btn" (click)="onPreview()" *ngIf="!showPreview">Preview</button>
+              <button type="submit" class="pay-btn" *ngIf="showPreview">Proceed to Pay</button>
+              <button type="button" class="edit-btn" (click)="onEdit()" *ngIf="showPreview">Edit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

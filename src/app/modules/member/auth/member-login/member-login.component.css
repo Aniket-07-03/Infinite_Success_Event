@@ -1,0 +1,243 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  font-family: 'Poppins',sans-serif;
+
+  justify-content: center;
+  align-items: center;
+  overflow:hidden;
+  background-color: #f3f3f3;
+}
+
+.container {
+  display: flex;
+
+  width: 99.1vw;
+  height: 95vh;
+  /* max-width: 1200px; */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  /* border-radius: 10px; */
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.login-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* styles.css */
+.is-invalid {
+  border-color: #dc3545;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875em;
+  margin-top: 0.25em;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 350px;
+  /* Smaller width for the form */
+}
+
+.login-form h2 {
+  color: #5b2fc5;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.toggle-button {
+  background-color: #eee;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 1;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.toggle-button:last-child {
+  margin-right: 0;
+}
+
+.toggle-button.active {
+  background-color: #5b2fc5;
+  color: #fff;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 1em;
+}
+
+.input-group input {
+  width: calc(100% - 0px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.show-password {
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #aaa;
+}
+
+.forgot-password {
+  display: block;
+  margin-left: 200px;
+  margin-bottom: 20px;
+  color: #5b2fc5;
+  text-decoration: none;
+  font-size: 1.0em;
+  text-align: center;
+}
+
+.register {
+  display: block;
+  margin-left: 200px;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.0em;
+  text-align: center;
+}
+
+.login-button {
+  background-color: #5b2fc5;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #4a24a4;
+}
+
+.welcome-section {
+  flex: 1.0;
+  /* Adjust flex to make welcome section wider */
+  background-color: #5b2fc5;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-section h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.welcome-section p {
+  margin-bottom: 40px;
+  font-size: 1.2em;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../../../assets/Rectangle.png');
+  /* Update this path */
+  background-size: cover;
+  background-position: center;
+  opacity: 2.15;
+  z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+  }
+
+  .login-section,
+  .welcome-section {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .login-section {
+    order: 2;
+  }
+
+  .welcome-section {
+    order: 1;
+  }
+
+  .login-form h2 {
+    font-size: 1.2em;
+  }
+}

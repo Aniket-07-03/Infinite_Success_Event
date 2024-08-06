@@ -1,0 +1,272 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins',sans-serif;
+
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 280px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.logo p {
+  font-size: 14px;
+  margin: 0;
+  color: #bbb;
+}
+
+.menu {
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: 'Poppins',sans-serif;
+
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 15px 0;
+}
+
+.menu a {
+  color: #070707;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu a:hover,
+.menu .active a {
+  background-color: #5a3ea8;
+  color: white;
+}
+
+.fa{
+  color: rgba(142, 146, 154, 1);
+}
+/* Main content styles */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9fc;
+}
+.header {
+  width: 78%;
+  position: fixed;
+  top: 10px;
+  left: 320px; /* Adjust this according to your sidebar width */
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.search {
+  position: relative;
+  width: 600px; /* Ensures the input width is controlled by the parent */
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #999; /* Optional: Change the color of the icon */
+}
+
+.search input {
+  padding: 10px 10px 10px 35px; /* Adjust left padding to make space for the icon */
+  width: 100%; /* Ensures the input takes up the full width of the container */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border 0.3s;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.search input:focus {
+  border-color: #5a3ea8;
+  outline: none;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust gap between icons */
+}
+
+.icon-image {
+  width: 50px;
+  height: 50px;
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.content {
+  margin-top: 50px; /* Space for fixed header */
+  padding: 20px;
+  /* overflow: hidden; */
+}
+
+
+
+
+
+
+
+
+
+.container1 {
+  width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.event-card {
+  border: 2px solid #00a3e0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.event-image {
+  width: 100%;
+  height: auto;
+}
+.event-content {
+  padding: 20px;
+}
+.event-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.event-subtitle {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+.event-description {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.event-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.event-detail {
+  flex: 1 1 45%;
+}
+.event-map {
+  width: 100%;
+  height: 200px;
+  background: url('https://i0.wp.com/thedebuggers.com/wp-content/uploads/2017/10/add-multiple-custom-markers-legend-gmap.png?fit=1388%2C894&ssl=1') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.event-map-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #a040a1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.event-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+}
+.event-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.book-now-button {
+  background-color: #a040a1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.icon-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.icon-button {
+  background-color: white;
+  color: #a040a1;
+  padding: 10px;
+  border: 2px solid #a040a1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.icon-button:hover {
+  background-color: #a040a1;
+  color: white;
+}
