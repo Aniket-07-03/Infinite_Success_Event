@@ -1,0 +1,66 @@
+ profileForm!: FormGroup;
+  profileImage: string | ArrayBuffer | null = null;
+  isEditing: boolean = false;
+
+  constructor(private fb: FormBuilder, private userService:AuthService) {}
+
+  ngOnInit(): void {
+    // Initialize the form
+    this.profileForm = this.fb.group({
+      username: [{ value: '', disabled: !this.isEditing }, Validators.required],
+      adminId: [{ value: '', disabled: !this.isEditing }, Validators.required],
+      email: [{ value: '', disabled: !this.isEditing }, [Validators.required, Validators.email]],
+      phoneNumber: [{ value: '', disabled: !this.isEditing }, Validators.required]
+    });
+
+    // Load user data
+    this.loadUserProfile();
+  }
+
+  // Load user data (simulate service call)
+  loadUserProfile(): void {
+    this.userService.getCurrentUser().subscribe(user => {
+      if (user) {
+        this.profileForm.patchValue({
+          username: user.name,
+          adminId: user.adminId,
+          email: user.email,
+          phoneNumber: user.phoneNumber
+        });
+        this.profileImage = user.profileImage; // Assuming this is a URL or base64 string
+      }
+    });
+  }
+
+  // Handle file selection
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.profileImage = reader.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  // Toggle edit mode
+  toggleEditMode(): void {
+    this.isEditing = !this.isEditing;
+    this.profileForm.get('username')?.enable();
+    this.profileForm.get('adminId')?.enable();
+    this.profileForm.get('email')?.enable();
+    this.profileForm.get('phoneNumber')?.enable();
+  }
+
+  // Handle form submission
+  onSubmit(): void {
+    if (this.profileForm.valid) {
+      // Save user data (simulate service call)
+      const updatedUser = this.profileForm.value;
+      this.userService.updateUserProfile(updatedUser).subscribe(response => {
+        // Handle response
+        console.log('Profile updated successfully', response);
+      });
+    }
+  }

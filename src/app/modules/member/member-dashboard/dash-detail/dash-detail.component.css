@@ -10,7 +10,8 @@ html {
   background-color: #f4f4f9;
   color: #333;
   height: 100vh;
-  overflow: hidden; /* Prevent body overflow */
+  /* overflow: hidden; */
+  /* Prevent body overflow */
 }
 
 .container {
@@ -20,8 +21,9 @@ html {
   padding: 0;
   font-family: "Poppins";
   background-color: #f4f4f9;
-  height: 120vh;
-  overflow: hidden; /* Prevent body overflow */
+  height: 131vh;
+  overflow: hidden;
+  /* Prevent body overflow */
 }
 
 
@@ -186,7 +188,7 @@ html {
   overflow-y: visible;
   /* overflow-y: auto; */
   /* Ensure scrollability in content */
-  height: 100vh ;
+  height: 100vh;
   /* Adjust for header height */
 }
 
@@ -202,16 +204,17 @@ html {
 
 /* Weekly Basis Status styling */
 .event-status {
+  margin-top: 370px;
   background-color: #fff;
   border-radius: 15px;
-  margin-left: 200px;
-  width: 800px;
+  margin-left: 70px;
+  width: 700px;
   padding: 20px;
   /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .event-status h3 {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   font-weight: 600;
   font-size: 18px;
   color: #673ab7;
@@ -223,10 +226,10 @@ html {
   justify-content: space-between;
   background-color: #f3f3f3;
   border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 25px;
+  padding: 10px;
+  margin-bottom: 10px;
   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); */
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
 }
 
 .status-card:hover {
@@ -253,17 +256,17 @@ html {
 
 /* Recommended Events styling */
 .recommended-events {
-  background-color: #fff;
+  background: rgba(255, 255, 255, 1);
   border-radius: 15px;
   padding: 20px;
   margin-top: 20px;
   /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
-  margin-left: 200px;
-  width: 800px;
+  margin-left: 70px;
+  width: 700px;
 }
 
 .recommended-events h3 {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   font-weight: 600;
   font-size: 18px;
   color: #673ab7;
@@ -288,7 +291,7 @@ html {
   align-items: center;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); */
   transition: transform 0.3s ease;
 }
 
@@ -297,8 +300,8 @@ html {
 }
 
 .event-thumbnail {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 130px;
   object-fit: cover;
   margin-right: 15px;
 }
@@ -319,12 +322,23 @@ html {
 .event-info .event-meta {
   margin-bottom: 5px;
 }
+.button{
+  margin-left: 200px;
+  background-color: #5a3ea8;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 70px;
+  text-align: center;
+  cursor: pointer;}
 /* Left Panel styling */
 
 
 /* Right Sidebar for Other Content */
 .right-sidebar {
-  width: 310px;
+  width: 330px;
   background-color: #f4f4f9;
   padding: 20px;
   /* box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); */
@@ -333,7 +347,7 @@ html {
   margin-top: 80px;
   overflow-y: auto;
   /* Align with content top */
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .recent-updates {
@@ -385,6 +399,7 @@ html {
   font-weight: 600;
   min-width: 70px;
   text-align: center;
+  cursor: pointer;
 }
 
 /* New class to wrap event details and right sidebar */
@@ -396,12 +411,20 @@ html {
 
 
 .container1 {
-  width: 80%;
+  width: 50%;
   margin: 50px auto;
-  background: linear-gradient(45deg, #6c63ff, #5a3ea8);
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  margin-left: 40px;
+  /* width: 100%;
+  height: 100%; */
+  background-image: url('../Rectangle\ 6117.png');
+  /* Update this path */
+  background-size: cover;
+  background-position: center;
+  opacity: 2.15;
+  z-index: 0;
 }
 
 .event-details1 {
@@ -411,19 +434,24 @@ html {
   margin-bottom: 30px;
 }
 
-  .event-title1 {
-    font-size: 40px;
-    font-weight: 700;
-    color: white;
-    text-align: center; /* Optional: Center align the text */
-  }
+.event-title1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  /* Optional: Center align the text */
+}
 
-  .event-title1 p {
-    font-size: 40px; /* Adjust the size for the <p> tag */
-    font-weight: 700; /* Optional: Make the <p> text normal weight */
-    margin: 0; /* Remove default margin of <p> */
-    margin-left: 20px;
-  }
+.event-title1 p {
+  font-size: 40px;
+  /* Adjust the size for the <p> tag */
+  font-weight: 700;
+  /* Optional: Make the <p> text normal weight */
+  margin: 0;
+  /* Remove default margin of <p> */
+  margin-left: 20px;
+}
+
 .event-info1 {
   text-align: right
 }
@@ -465,7 +493,19 @@ html {
 }
 
 
-
+#background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../Rectangle\ 6117.png');
+  /* Update this path */
+  background-size: cover;
+  background-position: center;
+  opacity: 2.15;
+  z-index: 0;
+}
 
 .grid-container {
   display: grid;
@@ -513,6 +553,7 @@ html {
   margin: 0;
   margin-top: 10px;
 }
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EventService } from '../../../core/event.service';
 import { format, parseISO } from 'date-fns';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-member-dashboard',
@@ -20,7 +21,7 @@ export class MemberDashboardComponent {
 
   eventData: any;
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService, private router:Router) { }
 
   ngOnInit(): void {
     this.eventService.getEvent().subscribe(
@@ -43,5 +44,11 @@ export class MemberDashboardComponent {
     console.error('Invalid date format', error);
     return dateString; // Return the original string if there's an error
   }
+}
+
+
+viewDetails(id: number): void {
+  this.router.navigate(['/member-event', id]);
+
 }
 }

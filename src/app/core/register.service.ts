@@ -2,6 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+export interface signUp {
+  username: string;
+  email: string;
+  mobileNumber : string;
+  password: string;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +17,7 @@ export class RegisterService {
 
   constructor(private http: HttpClient) {}
 
-  registerUser(user: any): Observable<any> {
+  registerUser(user: signUp[]): Observable<any> {
     return this.http.post<any>(this.apiUrl, user);
   }
 
@@ -20,5 +26,5 @@ export class RegisterService {
     return this.http.get(this.apiUrl,user)
   }
 
- 
+
 }

@@ -51,7 +51,6 @@ export class MemberLoginComponent {
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
-
   onSubmit() {
     if (this.loginForm.valid) {
       const loginData = {
@@ -61,7 +60,7 @@ export class MemberLoginComponent {
       };
 
       this.loginService.login(loginData.email, loginData.mobileNumber, loginData.password).subscribe(
-        (loginSuccess) => {
+        loginSuccess => {
           if (loginSuccess) {
             this.toastr.success('Logged in successfully!', 'Success', {
               timeOut: 3000,
@@ -69,7 +68,7 @@ export class MemberLoginComponent {
               progressBar: true,
               positionClass: 'toast-top-right',
             });
-            this.router.navigate(['']);
+            this.router.navigate(['/member-dashboard']);
           } else {
             this.toastr.error('Invalid email or password. Please try again.', 'Login Failed', {
               timeOut: 3000,
@@ -80,7 +79,7 @@ export class MemberLoginComponent {
             console.log('Login failed');
           }
         },
-        (error) => {
+        error => {
           this.toastr.error('An error occurred. Please try again later.', 'Error', {
             timeOut: 3000,
             closeButton: true,
@@ -99,4 +98,5 @@ export class MemberLoginComponent {
       });
     }
   }
+
 }

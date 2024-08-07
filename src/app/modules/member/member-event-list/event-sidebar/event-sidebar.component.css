@@ -1,11 +1,11 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f3f4f6;
   margin: 0;
   padding: 0;
 }
 
 .events-section {
+  font-family: 'poppins';
   padding: 20px;
   border-radius: 12px;
   overflow: hidden;

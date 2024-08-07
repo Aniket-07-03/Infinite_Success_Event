@@ -1,0 +1,18 @@
+<!-- profile-update.component.html -->
+<div class="profile-update-container">
+  <div class="profile-photo">
+    <img
+
+      alt="Profile Photo"
+      class="profile-image"
+    />
+
+  </div>
+  <p class="add-profile-photo" >Add Profile Photo</p>
+  <form *ngIf="user">
+    <div class="form-group">
+      <p>Username: {{ user.username }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Mobile Number: {{ user.mobileNumber }}</p>
+
+</div>

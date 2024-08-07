@@ -14,6 +14,8 @@ body, html {
 }
 
 .container {
+  font-family: 'Poppins',sans-serif;
+
   display: flex;
   height: 100vh;
 }
@@ -152,6 +154,7 @@ body, html {
 
 .content {
   padding: 20px;
+  margin-top: 25px;
   /* overflow: hidden; */
 }
 

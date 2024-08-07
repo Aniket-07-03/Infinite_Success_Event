@@ -40,31 +40,32 @@
     </header>
 
 
-    <div class="content">
+    <div class="content" >
       <h2 class="event-title" style="color: #4D22AE; font-weight: 400; font-size: 40px;">Event Details</h2>
-      <div class="container1">
-        <div class="event-card">
-            <div class="position-relative">
-                <img src="https://cdn-gfmpn.nitrocdn.com/abNxfFokLJpCUCJuKcOdzZamuyKtSvkP/assets/images/source/rev-60b2a26/www.oneplanevents.com/wp-content/uploads/elementor/thumbs/Screenshot-2023-07-25-at-14.13.30-q9xo29f2ds5pjhcg0xr1gmjbpdm2pv4ex0mdj1cjxs.png" alt="Event Image" class="event-image">
+      <div class="container1" >
+        <div class="event-card"  >
+       
+            <div class="position-relative" *ngIf="eventData">
+                <img src="{{eventData.images}}" alt="Event Image" class="event-image">
                 <!-- <div class="icon-buttons">
                     <div class="icon-button">🔗</div>
                     <div class="icon-button">❤️</div>
                 </div> -->
             </div>
-            <div class="event-content">
+            <div class="event-content"  >
                 <div class="event-buttons">
-                    <div class="event-price">1000Rs.</div>
-                    <button class="book-now-button">Book Now</button>
+                    <div class="event-price">{{eventData.price}}Rs.</div>
+                    <button class="book-now-button" routerLink="/preview">Book Now</button>
                 </div>
-                <div class="event-title">Day in the sun!</div>
+                <div class="event-title">{{eventData.eventName}} </div>
                 <div class="event-subtitle">We are strong, Because the journey demands it!</div>
                 <div class="event-description">
-                    Lorem ipsum dolor sit amet consectetur. In urna vitae diam ut ac. Ac augue nisi mi mollis amet faucibus volutpat urna. Locus neque et enim nunc faucibus urna justo nunc blandit. Ut at purus leo vitae orci. Integer a vitae et faucibus mi egestas eu. Et tellus hac convallis ridiculus aliquet urna.
+                {{eventData.eventDescription}}          
                 </div>
                 <div class="event-details">
                     <div class="event-detail"><strong>Qualification level:</strong><br> Open to all Senior consultants</div>
-                    <div class="event-detail"><strong>Location:</strong><br> Andheri, Mumbai, Maharashtra</div>
-                    <div class="event-detail"><strong>Date and Time:</strong><br> Sunday, 9 March 2022 - 10:00 am</div>
+                    <div class="event-detail"><strong>Location:</strong><br> {{eventData.eventLocation}}</div>
+                    <div class="event-detail"><strong>Date and Time:</strong><br> {{eventData.eventStarDate}} - 10:00 am</div>
                     <div class="event-detail"><strong>Seats Left:</strong><br> 55 Seats are left</div>
                 </div>
                 <div class="event-map">

@@ -3,7 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { emailOrMobileValidator } from '../../../auth/register/validator';
-import { MemberRegisterService } from '../../../../core/member/member-register.service';
+import { MemberRegisterService, SignUp } from '../../../../core/member/member-register.service';
+import { RegisterService } from '../../../../core/register.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-member-register',
@@ -11,67 +13,47 @@ import { MemberRegisterService } from '../../../../core/member/member-register.s
   styleUrl: './member-register.component.css'
 })
 export class MemberRegisterComponent {
+  registerForm: FormGroup;
+  showPassword = false;
 
-
-  memberForm: FormGroup;
-
-  constructor(private fb:FormBuilder, private userService:MemberRegisterService, private toastr:ToastrService){
-    this.memberForm =this.fb.group({
-      memberName:['',Validators.required],
-      memberLastName:['',Validators.required],
-      memberId:['',Validators.required],
-      memberPinLevel:['',Validators.required],
-      memberIncharge:['',Validators.required],
-      memberTeam:['',Validators.required],
-      memberEmail:['',Validators.required],
-      memberNumber:['',Validators.required],
-      memberGst:['',Validators.required],
-      memberSpouseName:['',Validators.required],
-      memberAddress1:['',Validators.required],
-      memberAddress2:['',Validators.required],
-      memberCity:['',Validators.required],
-      memberState:['',Validators.required],
-      memberCountry:['',Validators.required],
-      memberZipCode:['',Validators.required],
-    })
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private toastr: ToastrService,
+    private router: Router
+  ) {
+    this.registerForm = this.fb.group({
+      username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$')]],
+    }, {
+      validators: emailOrMobileValidator()
+    });
   }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
   onSubmit() {
-    if (this.memberForm.valid) {
-      this.userService.createMember(this.memberForm.value).subscribe(response => {
-        this.toastr.success('Register successfully!', 'Success', {
-          timeOut: 3000,
-          closeButton: true,
-          progressBar: true,
-          positionClass: 'toast-top-right',
-        });
-        console.log('Event created', response);
-        // this.eventForm.reset();
-        // this.resetPinLevels();
-      });
-    } else {
-      this.toastr.error('Failed to create event. Please try again.', 'Error');
-
-      console.log('Form is invalid');
+    if (this.registerForm.invalid) {
+      this.toastr.error('Please fix the errors in the form.');
+      return;
     }
+
+    const newUser = this.registerForm.value;
+
+    this.http.post<SignUp[]>('http://localhost:3000/users', newUser).subscribe(
+      response => {
+        console.log('User registered:', response);
+        this.toastr.success('Registration successful!');
+        this.router.navigate(['/login']);  // Redirect to login page or another page
+      },
+      error => {
+        console.error('Registration error:', error);
+        this.toastr.error('Registration failed. Please try again.');
+      }
+    );
   }
-
-
-
-
-
-  onFileSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        const img = document.getElementById('profileImage') as HTMLImageElement;
-        img.src = e.target.result;
-      };
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
-
-
-
-
 }

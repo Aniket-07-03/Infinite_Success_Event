@@ -18,6 +18,8 @@ import { MemberEventListComponent } from './modules/member/member-event-list/mem
 import { TicketBookComponent } from './modules/member/ticket-book/ticket-book.component';
 import { MemberEventDetailsComponent } from './modules/member/member-event-details/member-event-details.component';
 import { PreviewTicketComponent } from './modules/member/ticket-book/preview-ticket/preview-ticket.component';
+import { TicketsComponent } from './modules/member/tickets/tickets.component';
+import { ProfileComponent } from './modules/member/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
@@ -35,8 +37,11 @@ const routes: Routes = [
   { path:'member-dashboard', component:MemberDashboardComponent},
   { path:'member-event-list', component:MemberEventListComponent},
   { path:'ticket-book', component:TicketBookComponent},
-  { path:'event-details', component:MemberEventDetailsComponent},
-  { path:'preview', component:PreviewTicketComponent}
+  { path:'member-event/:id', component:MemberEventDetailsComponent},
+  { path:'preview', component:PreviewTicketComponent},
+  { path:'tickets', component:TicketsComponent},
+  { path:'profile', component:ProfileComponent}
+
 ];
 
 @NgModule({

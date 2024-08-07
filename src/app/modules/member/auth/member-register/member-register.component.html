@@ -1,101 +1,79 @@
-<div class="container">
-  <div class="left-side">
-    <h1>Hello Friend!</h1>
-    <p>Enter your personal details and start your journey with us.</p>
-    <p><a href="#">Already have an account? Login</a></p>
-  </div>
-  <div class="right-side">
-    <div class="form-container">
-      <form [formGroup]="memberForm" (ngSubmit)="onSubmit()" >
-        <!-- Profile Picture Section -->
-        <div class="profile-picture">
-          <img id="profileImage" src="https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Profile Picture">
-          <input type="file" id="uploadImage" accept="image/*" (change)="onFileSelected($event)">
-        </div>
-        <!-- End Profile Picture Section -->
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName"  formControlName="memberName">
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName"  formControlName="memberLastName">
+<div class="container" style="font-family: 'Poppins', sans-serif;">
+  <div class="register-section">
+    <div class="logo">
+      <!-- <img src="assets/Logo.png" alt="Infinite Success Events" /> -->
+      <svg width="164" height="59" viewBox="0 0 164 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- SVG content here -->
+      </svg>
+    </div>
+    <div class="register-form">
+      <h2>Register</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            formControlName="username"
+            placeholder="Enter your username"
+          />
+          <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid" class="error">
+            Username is required.
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="memberID">Member ID</label>
-            <input type="text" id="memberID" name="memberID" formControlName="memberId">
-          </div>
-          <div class="form-group">
-            <label for="pinLevel">PIN Level</label>
-            <input type="text" id="pinLevel" name="pinLevel" formControlName="memberPinLevel">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="systemIncharge">System Incharge</label>
-            <input type="text" id="systemIncharge" name="systemIncharge" formControlName="memberIncharge">
-          </div>
-          <div class="form-group">
-            <label for="tabTeamName">Tab Team Name</label>
-            <input type="text" id="tabTeamName" name="tabTeamName" formControlName="memberTeam">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="typeyouremailid@gmail.com"
+          />
+          <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="error">
+            <div *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format.</div>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="emailID">Email ID</label>
-            <input type="email" id="emailID" name="emailID" formControlName="memberEmail">
-          </div>
-          <div class="form-group">
-            <label for="phoneNumber">Phone Number</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" formControlName="memberNumber">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="gst">GST</label>
-            <input type="text" id="gst" name="gst" formControlName="memberGst">
-          </div>
-          <div class="form-group">
-            <label for="spouseName">Spouse Name</label>
-            <input type="text" id="spouseName" name="spouseName" formControlName="memberSpouseName">
+        <div class="input-group">
+          <label for="mobile">Mobile Number</label>
+          <input
+            type="tel"
+            id="mobile"
+            formControlName="mobileNumber"
+            placeholder="Enter mobile number"
+          />
+          <div *ngIf="registerForm.get('mobileNumber')?.touched && registerForm.get('mobileNumber')?.invalid" class="error">
+            <div *ngIf="registerForm.get('mobileNumber')?.errors?.['pattern']">Invalid mobile number format.</div>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address"  formControlName="memberAddress1">
-          </div>
-          <div class="form-group">
-            <label for="address2">Address 2</label>
-            <input type="text" id="address2" name="address2" formControlName="memberAddress2">
+        <div class="error" *ngIf="registerForm.errors?.['emailOrMobile']">
+          Either email or mobile number is required.
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            formControlName="password"
+            placeholder="********"
+          />
+          <span class="show-password" (click)="togglePasswordVisibility()">
+            {{ showPassword ? 'Hide' : 'Show' }}
+          </span>
+          <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid" class="error">
+            <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</div>
+            <div *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long.</div>
+            <div *ngIf="registerForm.get('password')?.errors?.['pattern']">Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.</div>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" id="city" name="city"  formControlName="memberCity">
-          </div>
-          <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" id="state" name="state" formControlName="memberState">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="country">Country</label>
-            <input type="text" id="country" name="country" formControlName="memberCountry">
-          </div>
-          <div class="form-group">
-            <label for="zipCode">Zip Code</label>
-            <input type="text" id="zipCode" name="zipCode" formControlName="memberZipCode">
-          </div>
-        </div>
-        <button type="submit" style="  justify-content: center; ">Submit Details</button>
+        <button type="submit" class="register-button">Register</button>
       </form>
+    </div>
+  </div>
+  <div class="welcome-section">
+    <div class="background-image"></div>
+    <div class="welcome-content">
+      <h2>Welcome!</h2>
+      <p>Create an account to join us and enjoy our services</p>
     </div>
   </div>
 </div>
