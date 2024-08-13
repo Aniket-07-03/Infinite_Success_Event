@@ -34,6 +34,8 @@ import { TicketBookComponent } from './modules/member/ticket-book/ticket-book.co
 import { PreviewTicketComponent } from './modules/member/ticket-book/preview-ticket/preview-ticket.component';
 import { TicketsComponent } from './modules/member/tickets/tickets.component';
 import { ProfileComponent } from './modules/member/profile/profile.component';
+import { AssignEventListComponent } from './modules/verifier/assign-event-list/assign-event-list.component';
+import { AssignTicketDetailsComponent } from './modules/verifier/assign-ticket-details/assign-ticket-details.component';
 
 
 @NgModule({
@@ -66,6 +68,8 @@ import { ProfileComponent } from './modules/member/profile/profile.component';
     PreviewTicketComponent,
     TicketsComponent,
     ProfileComponent,
+    AssignEventListComponent,
+    AssignTicketDetailsComponent,
 
   ],
   imports: [

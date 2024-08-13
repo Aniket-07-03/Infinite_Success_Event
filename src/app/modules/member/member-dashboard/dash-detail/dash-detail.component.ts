@@ -18,6 +18,11 @@ export class DashDetailComponent {
     private router: Router,
     private toastr: ToastrService // Inject ToastrService
   ) { }
+  sidebarOpen = false;
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
 
   ngOnInit(): void {
     this.eventService.getEvent().subscribe(

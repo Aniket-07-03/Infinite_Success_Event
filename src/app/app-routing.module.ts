@@ -20,6 +20,7 @@ import { MemberEventDetailsComponent } from './modules/member/member-event-detai
 import { PreviewTicketComponent } from './modules/member/ticket-book/preview-ticket/preview-ticket.component';
 import { TicketsComponent } from './modules/member/tickets/tickets.component';
 import { ProfileComponent } from './modules/member/profile/profile.component';
+import { AssignEventListComponent } from './modules/verifier/assign-event-list/assign-event-list.component';
 
 const routes: Routes = [
   { path: '', component: AuthComponent },
@@ -40,7 +41,8 @@ const routes: Routes = [
   { path:'member-event/:id', component:MemberEventDetailsComponent},
   { path:'preview', component:PreviewTicketComponent},
   { path:'tickets', component:TicketsComponent},
-  { path:'profile', component:ProfileComponent}
+  { path:'profile', component:ProfileComponent},
+  { path:'assign-list', component:AssignEventListComponent}
 
 ];
 

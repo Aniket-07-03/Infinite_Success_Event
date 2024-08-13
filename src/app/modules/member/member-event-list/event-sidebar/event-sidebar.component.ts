@@ -28,4 +28,6 @@ export class EventSidebarComponent {
     this.router.navigate(['/member-event', id]);
 
   }
+
+ 
 }
