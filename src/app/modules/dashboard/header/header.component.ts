@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+interface bill {
+  InvoiceID:number;
+  EventName: string
+  Date:string
+  TicketType:string
+  Amount:number
+
+}
 
 @Component({
   selector: 'app-header',
@@ -6,10 +14,19 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  days: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,]
+  events: bill[] = [
+    { InvoiceID: 1234, EventName: 'UIUX Workshop', Date: '25/03/22', TicketType: 'single', Amount: 1500 },
+    // Additional data...
+  ];
 
+  selectedInvoice: bill | null = null;
 
-
+  printInvoice(event: bill): void {
+    this.selectedInvoice = event; // Assign the clicked event to selectedInvoice
+    setTimeout(() => {
+      window.print(); // Print the page
+    }, 100); // Slight delay to ensure DOM updates before print
+  }
 
 
 

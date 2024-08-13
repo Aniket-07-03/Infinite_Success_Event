@@ -1,0 +1,98 @@
+
+<div class="container">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="./logo.svg" alt="">
+    </div>
+    <nav class="menu">
+      <ul>
+        <li> <a routerLink="/dashboard"> <i class="fa fa-house"></i>&nbsp;&nbsp;
+            Dashboard</a></li>
+        <li ><a ><i class="fa fa-calendar-days"></i>&nbsp;&nbsp;Event Management</a></li>
+        <li><a routerLink="/user-list"><i class="fa fa-user"></i>&nbsp;&nbsp; User Management</a></li>
+
+        <li><a routerLink="/admin"> <i class="fa fa-plus">&nbsp;&nbsp;</i>Add Admin</a></li>
+        <li><a> <i class="fa fa-repeat"></i> &nbsp;&nbsp; Switch Account</a></li>
+        <li><a> <i class="fa fa-gear"></i>&nbsp;&nbsp; Settings</a></li>
+        <li class="active"><a> <i class="fa fa-gear"></i>&nbsp;&nbsp; Bill</a></li>
+        <li><a><i class="fa fa-arrow-right-from-bracket"></i>&nbsp;&nbsp; Log out</a></li>
+      </ul>
+    </nav>
+<app-calendar></app-calendar>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <div class="search">
+        <i class="fa fa-magnifying-glass search-icon"></i>
+        <input type="text" placeholder="Search">
+      </div>
+
+      <div class="icons">
+        <button style="border: none; background: none;">
+          <img src="./Messages.png" alt="Messages" class="icon-image" />
+        </button>
+        <button style="border: none; background: none;">
+          <img src="./Notifications.png" alt="Notifications" class="icon-image" />
+        </button>
+        <div class="user">
+          <img src="./user.png" alt="User">
+        </div>
+      </div>
+    </header>
+
+
+    <div class="content">
+      <h2 class="event-title" style="color: #4D22AE; font-weight: 400; font-size: 40px;">Billing</h2>
+
+      <section class="event-list">
+
+          <div class="tabs">
+            <div>
+              <a   ></a>
+              <a  ></a>
+            </div>
+            <a  class="export-btn" (click)="exportCSV()">
+              <i class="fas fa-file-export"></i> Export CSV
+            </a>
+          </div>
+
+        <table *ngIf="selectedTab === 'master'">
+          <thead>
+            <tr>
+              <th>Invoice ID</th>
+              <th>Event Name</th>
+              <th>Generated Date </th>
+              <th>Ticket Type</th>
+              <th>Amount</th>
+              <th>Share</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let event of events">
+              <td>#{{ event.InvoiceID }}</td>
+              <td>{{ event.EventName }}</td>
+              <td>{{ event.Date }}</td>
+              <td>{{ event.TicketType }}</td>
+              <td>{{ event.Amount }}/-</td>
+              <td>
+                <i class="fa-brands fa-whatsapp icon"></i>&nbsp;
+                <i class="fa-solid fa-envelope icon"></i>
+              </td>
+              <td>
+                <i routerLink="/invoice" class="fa-solid fa-eye icon"></i>&nbsp;&nbsp;
+                <i onclick="window.print()" class="fa-solid fa-print icon"></i>
+              </td>
+
+
+            </tr>
+
+
+          </tbody>
+        </table>
+
+      </section>
+    </div>
+  </main>
+</div>
