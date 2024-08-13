@@ -1,13 +1,13 @@
-
 * {
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #f4f4f9;
   color: #333;
 }
@@ -15,7 +15,7 @@ body, html {
 .container {
   display: flex;
   height: 100vh;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
 
 }
 
@@ -78,9 +78,10 @@ body, html {
   color: white;
 }
 
-.fa{
+.fa {
   color: rgba(142, 146, 154, 1);
 }
+
 /* Main content styles */
 .main-content {
   flex: 1;
@@ -88,11 +89,13 @@ body, html {
   flex-direction: column;
   background-color: #f9f9fc;
 }
+
 .header {
   width: 80%;
   position: fixed;
   top: 10px;
-  left: 280px; /* Adjust this according to your sidebar width */
+  left: 280px;
+  /* Adjust this according to your sidebar width */
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -106,7 +109,8 @@ body, html {
 
 .search {
   position: relative;
-  width: 600px; /* Ensures the input width is controlled by the parent */
+  width: 600px;
+  /* Ensures the input width is controlled by the parent */
 }
 
 .search-icon {
@@ -114,16 +118,20 @@ body, html {
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  color: #999; /* Optional: Change the color of the icon */
+  color: #999;
+  /* Optional: Change the color of the icon */
 }
 
 .search input {
-  padding: 10px 10px 10px 35px; /* Adjust left padding to make space for the icon */
-  width: 100%; /* Ensures the input takes up the full width of the container */
+  padding: 10px 10px 10px 35px;
+  /* Adjust left padding to make space for the icon */
+  width: 100%;
+  /* Ensures the input takes up the full width of the container */
   border: 1px solid #ddd;
   border-radius: 5px;
   transition: border 0.3s;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
 }
 
 .search input:focus {
@@ -134,7 +142,8 @@ body, html {
 .icons {
   display: flex;
   align-items: center;
-  gap: 20px; /* Adjust gap between icons */
+  gap: 20px;
+  /* Adjust gap between icons */
 }
 
 .icon-image {
@@ -150,7 +159,8 @@ body, html {
 }
 
 .content {
-  margin-top: 40px; /* Space for fixed header */
+  margin-top: 40px;
+  /* Space for fixed header */
   padding: 20px;
   overflow: hidden;
 }
@@ -166,7 +176,8 @@ body, html {
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  height: calc(100vh - 180px); /* Adjust height based on header and padding */
+  height: calc(100vh - 180px);
+  /* Adjust height based on header and padding */
   overflow-y: auto;
 }
 
@@ -178,8 +189,10 @@ body, html {
 
 table {
   width: 100%;
-  border-collapse: separate; /* Allow spacing between rows */
-  border-spacing: 0 10px; /* Vertical gap of 10px between rows */
+  border-collapse: separate;
+  /* Allow spacing between rows */
+  border-spacing: 0 10px;
+  /* Vertical gap of 10px between rows */
 }
 
 thead th {
@@ -196,11 +209,12 @@ thead th {
 
 tbody td {
   padding: 12px;
-  background-color:  rgba(246, 247, 249, 1);
+  background-color: rgba(246, 247, 249, 1);
   font-size: 14px;
   color: rgba(45, 45, 45, 1);
   font-weight: 600;
-  border: none; /* Ensure no borders interfere with spacing */
+  border: none;
+  /* Ensure no borders interfere with spacing */
   border-radius: 10px;
 }
 
@@ -237,8 +251,6 @@ tbody tr:hover td {
 .assign-btn:hover {
   background-color: #bdbdbd;
 }
-
-
 
 .tabs {
   display: flex;
