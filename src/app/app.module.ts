@@ -19,6 +19,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ManageComponent } from './modules/admin/manage/manage.component';
 import { CalendarComponent } from './shared/calendar/calendar.component';
 import { DashExampComponent } from './shared/dash-examp/dash-examp.component';
+import { EventDetailsComponent } from './modules/admin/event-manage/event-details/event-details.component';
+import { DetailsComponent } from './modules/admin/event-manage/details/details.component';
+import { CreateEventComponent } from './modules/admin/event-manage/create-event/create-event.component';
+import { CreateEventFormComponent } from './modules/admin/event-manage/create-event-form/create-event-form.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { DashExampComponent } from './shared/dash-examp/dash-examp.component';
     RegisterComponent,
     ManageComponent,
     CalendarComponent,
-    DashExampComponent
+    DashExampComponent,
+    EventDetailsComponent,
+    DetailsComponent,
+    CreateEventComponent,
+    CreateEventFormComponent
   ],
   imports: [
     BrowserModule,

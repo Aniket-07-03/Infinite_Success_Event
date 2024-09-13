@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="event-card" *ngIf="eventData">
+    <div class="export-section">
+      <div class="event-header-wrapper">
+        <div class="event-header">
+          <h2>{{ eventData.eventName }}</h2>
+          <p class="event-location">
+            <span>📍</span> {{ eventData.eventLocation }}
+          </p>
+          <p class="event-date-time">
+            <span>📅</span> {{ eventData.eventStartDate }}
+            <br />
+            <span>⏰</span> {{ eventData.eventStartTime }} - {{ eventData.eventEndTime }}
+          </p>
+        </div>
+      </div>
+      <div class="event-description">
+        <h3>Event Description</h3>
+        <p>{{ eventData.eventDescription }}</p>
+      </div>
+      <div class="event-details">
+        <div class="details-row">
+          <div class="detail-item">
+            <span>Event Start Date</span>
+            <p>{{ eventData.eventStartDate }}</p>
+          </div>
+          <div class="detail-item">
+            <span>Event End Date</span>
+            <p>{{ eventData.eventEndDate }}</p>
+          </div>
+        </div>
+        <div class="details-row">
+          <div class="detail-item">
+            <span>Booking Start Date</span>
+            <p>{{ eventData.bookingStartDate }}</p>
+          </div>
+          <div class="detail-item">
+            <span>Booking End Date</span>
+            <p>{{ eventData.bookingEndDate }}</p>
+          </div>
+        </div>
+        <div class="details-row">
+          <div class="detail-item">
+            <span>Event Start Time</span>
+            <p>{{ eventData.eventStartTime }}</p>
+          </div>
+          <div class="detail-item">
+            <span>Event End Time</span>
+            <p>{{ eventData.eventEndTime }}</p>
+          </div>
+        </div>
+        <div class="details-row">
+          <div class="detail-item">
+            <span>Price</span>
+            <p>{{ eventData.price }}/-</p>
+          </div>
+          <div class="detail-item">
+            <span>Capacity</span>
+            <p>{{ eventData.capacity }}</p>
+          </div>
+        </div>
+        <div class="details-row">
+          <div class="detail-item">
+            <span>Add Location</span>
+            <p>{{ eventData.eventLocation }}</p>
+            <span class="icon">&#128269;</span>
+          </div>
+          <div class="detail-item">
+            <span>PIN Level</span>
+            <p>{{ eventData.pinLevel }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="photos-section">
+        <h3>Photos</h3>
+        <div class="photos">
+          <img *ngFor="let image of visibleImages" [src]="image" alt="Photo" />
+        </div>
+        <div class="photos-hidden" [ngClass]="{ 'show': showMoreImages }">
+          <img *ngFor="let image of hiddenImages" [src]="image" alt="Photo" />
+        </div>
+        <button *ngIf="eventData.images.length > 4" class="more-button" (click)="toggleMoreImages()">
+          {{ showMoreImages ? 'Show Less' : 'Show More' }}
+        </button>
+      </div>
+    </div>
+    <button class="export-btn" (click)="confirmExportPdf()">Export PDF</button>
+  </div>
+</div>

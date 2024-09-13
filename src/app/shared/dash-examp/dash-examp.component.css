@@ -6,25 +6,29 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   background-color: #f4f4f9;
   color: #333;
-  height: 100%;
-  overflow-y: visible;
-  /* Ensure that the body doesn't overflow */
+  height: 100vh;
+  overflow: hidden; /* Prevent body overflow */
 }
 
 .container {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
-  /* Prevent container overflow */
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  background-color: #f4f4f9;
+  height: 120vh;
+  overflow: hidden; /* Prevent body overflow */
 }
+
 
 /* Sidebar styles */
 .sidebar {
-  width: 250px;
-  height: 100vh;
+  width: 280px;
+  height: 120vh;
   background-color: #fff;
   color: #fff;
   display: flex;
@@ -80,17 +84,16 @@ html {
   display: flex;
   flex-direction: column;
   background-color: #f9f9fc;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   /* Enable vertical scrolling */
-  overflow-x: hidden;
 }
 
 
 .header {
-  width: calc(100% - 300px);
+  width: 80%;
   position: fixed;
   top: 10px;
-  left: 280px;
+  left: 290px;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -201,7 +204,7 @@ html {
 .weekly-status {
   display: flex;
   margin-bottom: 10px;
-  margin-left: 90px;
+  margin-left: 80px;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
@@ -233,10 +236,11 @@ html {
   width: 310px;
   background-color: #f4f4f9;
   padding: 20px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); */
   height: auto;
   border-radius: 10px;
   margin-top: 80px;
+  overflow-y: auto;
   /* Align with content top */
   margin-left: 20px;
 }
@@ -330,7 +334,7 @@ html {
     margin-left: 20px;
   }
 .event-info1 {
-  text-align: right;
+  text-align: right
 }
 
 .ticket-count1 {
@@ -417,4 +421,40 @@ html {
   color: #7e7e7e;
   margin: 0;
   margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    order: 1;
+  }
+
+  .main-content {
+    order: 2;
+  }
+
+  .right-sidebar {
+    width: 100%;
+    order: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

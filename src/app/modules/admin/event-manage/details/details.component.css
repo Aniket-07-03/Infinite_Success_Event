@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.container {
+  font-family: 'Poppins', sans-serif;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.event-header-wrapper {
+  background: linear-gradient(90deg, #7036d5, #c62d85);
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+}
+
+.event-header {
+  background-color: #fff;
+  color: #7036d5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.event-location,
+.event-date-time {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.event-description {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background-color: rgb(242, 243, 244);
+  border-radius: 0 0 10px 10px;
+}
+
+.event-description h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.event-details {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.detail-item {
+  flex: 0 0 48%;
+  background-color: rgb(242, 243, 244);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.detail-item span {
+  display: block;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.detail-item p {
+  margin: 0;
+  color: #333;
+}
+
+.photos-section {
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.photos-section h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.photos {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.photos img {
+  max-width: 150px; /* Adjust size as needed */
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.more-button {
+  background-color: #7036d5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.more-button:hover {
+  background-color: #5728a5;
+}
+
+.photos-hidden {
+  display: none;
+}
+
+.photos-hidden.show {
+  display: flex;
+}
+
+.export-btn {
+  background-color: #7036d5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.export-btn:hover {
+  background-color: #5728a5;
+}

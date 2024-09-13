@@ -1,4 +1,4 @@
-/* Container to hold the panels */
+Container to hold the panels
 .container {
   display: flex;
   height: 100vh;

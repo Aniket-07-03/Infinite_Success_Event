@@ -7,7 +7,7 @@
       <ul>
         <li> <a routerLink="/dashboard"> <i class="fa fa-house"></i>&nbsp;&nbsp;
             Dashboard</a></li>
-        <li class="active"><a><i class="fa fa-calendar-days"></i>&nbsp;&nbsp; Event Management</a></li>
+        <li class="active"><a><i class="fa fa-calendar-days"></i>&nbsp;&nbsp;Event Management</a></li>
         <li><a><i class="fa fa-user"></i>&nbsp;&nbsp; User Management</a></li>
 
         <li><a> <i class="fa fa-plus">&nbsp;&nbsp;</i>Add Admin</a></li>
@@ -57,13 +57,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let event of events">
-              <td>#{{ event.order }}</td>
-              <td>{{ event.name }}</td>
-              <td>{{ event.date }}</td>
-              <td>{{ event.location }}</td>
-              <td><button class="btn details-btn">Event Details</button></td>
-              <td><button class="btn assign-btn">Assign Event</button></td>
+            <tr *ngFor="let event of eventData">
+              <td>#{{ event.id }}</td>
+              <td>{{ event.eventName }}</td>
+              <td>{{ event.eventStartDate }}</td>
+              <td>{{ event.eventLocation }}</td>
+              <td><button (click)="viewDetails(event.id)" class="btn details-btn">Event Details</button></td>
+              <td><button class="btn assign-btn" (click)="openModal()">Assign Event</button></td>
             </tr>
 
 
@@ -73,3 +73,59 @@
     </div>
   </main>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Assign Verifier Modal -->
+<div class="modal-container" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5>Assign Ticket Verifier for UIUX Workshop</h5>
+      <button class="close-btn" (click)="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button class="filter-btn"><i class="fa fa-filter"></i></button>
+      </div>
+      <table class="table">
+        <thead class="thead">
+          <tr>
+            <th>Cust. ID</th>
+            <th>User Name</th>
+            <th>Location</th>
+            <th>PIN Level</th>
+            <th>Status</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.location }}</td>
+            <td>{{ user.pinLevel }}</td>
+            <td><input type="checkbox"></td>
+            <td><button class="details-button">User Details</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+      <button class="assign-button">Assign</button>
+    </div>
+  </div>
+</div>
+
+<!-- The button that triggers the modal -->
+<!-- <button class="btn assign-btn" >Assign Event</button> -->
+

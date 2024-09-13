@@ -9,8 +9,9 @@
 html,
 body {
   height: 100%;
-  font-family: 'Arial', sans-serif;
   display: flex;
+  font-family: 'Poppins',sans-serif;
+
   justify-content: center;
   align-items: center;
   overflow:hidden;
@@ -19,6 +20,7 @@ body {
 
 .container {
   display: flex;
+  
   width: 99.1vw;
   height: 95vh;
   /* max-width: 1200px; */
